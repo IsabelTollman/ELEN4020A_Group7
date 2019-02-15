@@ -1,8 +1,9 @@
 N=size(A)
+C=zeros(N,N)
 for k=0 to N-1 do
 	for i=0 to N-1 do
 		for j=0 to N-1 do
-			C[i][j]=A[i][k]*B[k][j]
+			C[i][j]=C[i][j]+A[i][k]*B[k][j]
 		end for
 	end for
 end for
