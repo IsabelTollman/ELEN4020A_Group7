@@ -1,0 +1,8 @@
+N=size(A)
+for i=0 to N-1
+	for j=0 to N-1
+		for k=0 to N-1
+			C[i][j][k]=A[i][j][k]+B[i][j][k]
+		end for
+	end for
+end for
