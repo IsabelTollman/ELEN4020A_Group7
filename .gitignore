@@ -1,0 +1,10 @@
+*.bak
+Settings_texmaker
+*.aux
+*.log
+*.bib
+*.bst
+*.cls
+*.bbl
+*.blg
+*.gz
