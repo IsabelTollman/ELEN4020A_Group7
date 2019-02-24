@@ -77,13 +77,31 @@ void displayAllArrays3D(const int e[N][N][N],const int f[N][N][N],const int g[N]
 	displayArray3D(g);
 }
 
-// 3D matrix addition
+// 3D array addition
 void rank3TensorAdd(const int e[N][N][N], const int f[N][N][N], int g[N][N][N]){
 	for(int i=0; i<N; i++){
 		for(int j=0; j<N; j++){
 			for(int k=0; k<N; k++){
 				g[i][j][k] = e[i][j][k] + f[i][j][k];
 			}
+		}
+	}
+}
+
+// 3D array multiplication
+void rank3TensorMulti(int e[N][N][N], int f[N][N][N], int g[N][N][N]){
+	int temp_e[N][N], temp_f[N][N], temp_g[N][N] = {};
+	for(int k=0; k<N; k++){
+		for (int i=0; i<N; i++){
+			for (int j=0; j<N; j++){
+				temp_e[i][j] = e[i][k][j];  
+				temp_f[j][i] = f[i][j][k];
+			}
+		}
+		rank2TensorMulti(temp_e, temp_f, temp_g);
+		for (int i=0; i<N; i++){
+			for (int j=0; j<N; j++)
+				g[k][i][j] = temp_g[i][j];  
 		}
 	}
 }
@@ -116,7 +134,7 @@ int main(){
 /*** 3D MATRICES ****************************************************************/
 // Initialise the random 3D arrays
 	srand(time(NULL));
-	int E[N][N][N], F[N][N][N], G[N][N][N] = {};
+	int E[N][N][N], F[N][N][N], G[N][N][N] = {}, H[N][N][N]={};
 	for(int i=0;i<N;i++){
 		for(int j=0;j<N;j++){
 			for(int k=0;k<N;k++){
@@ -128,6 +146,10 @@ int main(){
 	
 // 3D array addition
 	rank3TensorAdd(E,F,G);
-// Display the arrays
+// Display all the arrays
 	displayAllArrays3D(E,F,G);
+// 3D array multiplication and display of output array
+	rank3TensorMulti(E,F,H);
+	std::cout<<"Output array H: multiplication"<<std::endl;
+	displayArray3D(H);
 }
