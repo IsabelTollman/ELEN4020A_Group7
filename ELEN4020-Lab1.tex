@@ -30,7 +30,7 @@ Private Bag 3, 2050, Johannesburg, South Africa \\}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-\abstract{This report presents the procedure for tensor multiplication and addition of rank 2 and 3.}
+\abstract{This report presents the procedure for tensor multiplication and addition of rank 2 and 3. The rank 3 tensor is built using the methods used in rank 2 tensors.}
 
 \keywords{2D, 3D, Tensor, pseudocode}
 
@@ -43,9 +43,9 @@ Private Bag 3, 2050, Johannesburg, South Africa \\}}}
 %
 
 \section{INTRODUCTION} 
-This report details the procedure for addition and multiplication of Tensors of rank 2D and 3D. For each section the procedure is outlined and pseudo code is presented. Each of the procedures is implemented using C++. 
+This report seeks to investigate tensor operations carried out on rank 3 tensors. The rank 2 tensors procedures and the pseudocode required to achieve the procedures are presented. Using the basis of rank 2 tensors, rank 3 tensor operations are demonstrated along with pseudocode implementation. Each of the procedures is further implemented using C++ from the basis of the pseudocode.  
 \section{2D TENSOR ADD}
-The addition of two 2-dimensional matrices is achieved using element-by-element addition, as shown in Equation \ref{2d-add-eqn}. Algorithm 1 displays the pseudo-code used to calculate the addition of two N$\times$N matrices.
+The addition of two 2-dimensional tensors is congruent to 2 dimensional matrices. This therefore requires using element-by-element addition, as shown in Equation \ref{2d-add-eqn}. Algorithm 1 displays the pseudo-code used to calculate the addition of two N$\times$N matrices.
 
 \begin{align}
 C_{ij} = A_{ij} + B_{ij} \label{2d-add-eqn}
@@ -55,7 +55,7 @@ C_{ij} = A_{ij} + B_{ij} \label{2d-add-eqn}
 \includegraphics[width=\textwidth]{build/Algo1.png}
 \end{figure}
 \section{2D TENSOR MULTIPLY}
-The multiplication of two 2-dimensional matrices is achieved by performing the dot product on the respective
+The multiplication of rank 2 tensors is equivalent to 2-dimensional matrix multiplication which is achieved by performing the dot product on the respective
 rows and columns, as illustrated in Equation \ref{2d-mult-eqn}. Algorithm 2 shows the pseudo-code used to multiply two N$\times$N matrices.
 \begin{align}
 C_{ij} = \sum_{k} A_{ij} \times B_{ij} \label{2d-mult-eqn}
@@ -66,8 +66,7 @@ C_{ij} = \sum_{k} A_{ij} \times B_{ij} \label{2d-mult-eqn}
 \includegraphics[width=\textwidth]{build/Algo2.png}
 \end{figure}
 \section{3D TENSOR ADD}
-The addition of two 3-dimensional arrays is achieved using element-by-element addition,similar to a 2D array. The difference is only the addition of the inclusion of the additional dimension. Algorithm 3 shows
-the pseudo-code used to sum two N$\times$N$\times$N matrices.
+Using the rank 2 tensors as a basis, when a third rank is added the addition follows the same procedure, however the additional rank corresponds to an additional vertex of summation. The addition is achieved using element-by-element addition, similar to a 2D array. The difference is only the inclusion of the additional dimension. Algorithm 3 shows the pseudo-code used to sum two N$\times$N$\times$N matrices.
 \subsection{Code}
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{build/Algo3.png}
@@ -89,7 +88,7 @@ The preceding sections' pseudocode is implemented using c++. The code generated 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSIONS}
-
+The formation of rank 3 tensor operations is based on the rules of rank 2 tensors, with the addition of the multiple iterations present in the additional dimension. 
 
 \cite{1}
  
