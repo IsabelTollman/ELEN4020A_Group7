@@ -61,10 +61,10 @@ The addition of two 2-D tensors is congruent to addition of two 2-D matrices. Th
 C_{ij} = A_{ij} + B_{ij} \label{2d-add-eqn}
 \end{align}
 
-\vspace{-1.5mm}
-\begin{figure}[H] 
-\includegraphics[width=\textwidth]{build/Algo1.png} 
-\end{figure}
+\begin{figure*}
+\includegraphics[width=2\columnwidth]{build/Algo1.png}
+\caption{Listing showing the pseudo code for Rank 2 addition}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{2-DIMENSIONAL TENSOR MULTIPLICATION} \label{2Dmult}
@@ -75,10 +75,10 @@ The multiplication of rank 2 tensors is equivalent to 2-D matrix multiplication,
 C_{ij} = \sum_{k} A_{ij} \times B_{ij} \label{2d-mult-eqn}
 \end{align}
 
-\vspace{-1.5mm}
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{build/Algo2.png}
-\end{figure}
+\begin{figure*}
+\includegraphics[width=2\columnwidth]{build/Algo2.png}
+\caption{Listing showing the pseudo code for Rank 2 multiplication}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{3-DIMENSIONAL TENSOR ADDITION} \label{3Dadd}
@@ -87,34 +87,35 @@ Rank 2 tensor addition, discussed in Section \ref{2Dadd}, is used as a basis for
 
 Element-by-element addition is implemented in a similar fashion to the 2-D array procedure. The difference comes from the inclusion of the additional dimension. Figure \ref{fig:3Dadd} graphically depicts 3-D tensor addition, while Algorithm~3 shows the pseudo-code used to sum two N$\times$N$\times$N matrices. \vspace{3mm}
 
-\begin{figure}[H]
+\begin{figure*}
 	\centering
-	\includegraphics[scale=0.5]{build/AdditionDiagram_3D.png}
+	\includegraphics[width=2\columnwidth]{build/AdditionDiagram_3D.png}
 	\vspace{3mm}
 	\caption{Visualisation of rank 3 tensor addition}
 	\label{fig:3Dadd}
-\end{figure}
+\end{figure*}
 
-\vspace{-2mm}
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{build/Algo3.png}
-\end{figure}
+\begin{figure*}
+\includegraphics[width=2\columnwidth]{build/Algo3.png}
+\caption{Listing showing the pseudo code for Rank 3 addition}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{3-DIMENSIONAL TENSOR MULTIPLICATION} \label{3Dmult}
 
 The multiplication of two 3-D arrays (rank 3 tensor contraction) uses 2-D matrix multiplication as a basis. The $\text{i}^\text{th}$~row-plane of array A and the $\text{j}^\text{th}$~column-plane of array B are multiplied using traditional 2-D matrix multiplication shown in Algorithm~\ref{2d-mult-eqn}. The result is the $\text{k}^\text{th}$ layer-plane of array C. Algorithm 4 provides the pseudo-code used to multiply two N$\times$N$\times$N arrays. Figure \ref{3D} illustrates the implemented algorithm.
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{build/Algo4.png}
-\end{figure}
+\begin{figure*}
+\includegraphics[width=2\columnwidth]{build/Algo4.png}
+\caption{Listing showing the pseudo code for Rank 3 multiplication}
+\end{figure*}
 
-\begin{figure}[H]
+\begin{figure*}
 	\centering
 	\includegraphics[scale=0.5]{build/3Dmult.png}
 	\caption{Visualisation of rank 3 tensor multiplication}
 	\label{3D}
-\end{figure}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{IMPLEMENTATION}
