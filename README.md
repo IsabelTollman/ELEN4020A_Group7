@@ -2,7 +2,7 @@
 Jason Smit (709363); Emma Clark (1088496); Isabel Tollman (728359)
 
 NOTE: the GNU C++ compiler used is
-	* g++-7 7.3.0-27ubuntu1~18.04 amd64 
+* g++-7 7.3.0-27ubuntu1~18.04 amd64 
 
 ## GitHub repository: a guide
 
@@ -19,7 +19,7 @@ Includes pseudo-code .txt files, the .tex file for the report, and a folder call
 ### Branch: master
 
 This branch has been merged with both the *'Code'* and *'Documentation'* branches. Two folders:
-	* Code: contains contents of *'Code'* branch
-	* Documentation: contains contents of *'Documentation'* branch
+* Code: contains contents of *'Code'* branch
+* Documentation: contains contents of *'Documentation'* branch
 
 
