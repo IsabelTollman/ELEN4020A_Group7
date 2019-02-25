@@ -1,0 +1,129 @@
+\documentclass[10pt]{article}
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage[none]{hyphenat}
+\usepackage{titlesec}
+
+% Changing Page Style
+	\pagestyle{empty}
+	% Change margins
+	\topmargin      -10.4mm
+	\marginparwidth   0.0mm
+	\marginparsep     0.0mm
+	\oddsidemargin   -8mm
+	\evensidemargin  -8mm
+	\textheight     250.0mm
+	\textwidth      170.0mm
+	\columnsep        6.0mm
+	\parindent        0.0mm
+	\headsep          0.0mm
+	\headheight       0.0mm 
+	\lineskip           1pt
+	\normallineskip     1pt
+	\def\baselinestretch{1}
+	% Change section headings
+	\titleformat{\section}{\normalfont\fontsize{11}{11}\bfseries\filcenter}{\thesection}{1em}{}
+	\renewcommand\thesection{\arabic{section}}
+	% Change subsection headings
+	\titleformat{\subsection}{\normalfont\fontsize{11}{11}\bfseries}{\thesubsection}{1em}{}
+	\renewcommand\thesubsection{\Alph{subsection}}
+	% Change algorithm font size
+	\SetAlFnt{\small}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%
+\section*{APPENDIX}
+\subsection{2-Dimensional matrix addition}
+The addition of two 2-dimensional matrices is achieved using element-by-element addition, as shown in Equation~\ref{2D_add}~\cite{matrix_Add}. Algorithm~\ref{rank2TensorAdd} displays the pseudo-code used to calculate  the addition of two $N\times N$ matrices.
+	\begin{equation}
+		c_{ij} = a_{ij}+ b_{ij} 
+		\label{2D_add}
+	\end{equation}
+\vspace*{-7mm}
+	\begin{algorithm}
+		\DontPrintSemicolon
+		\KwIn{Three $N\times N$ constant integer arrays: $a[N][N], b[N][N]$ and $c[N][N]$}
+		\KwOut{void}
+			$N \gets $ size$(a)$\;
+			\For{$i \gets 0$ \textbf{to} $N-1$} {
+				\For{$j \gets 0$ \textbf{to} $N-1$} {
+					$c[i][j]=a[i][j]+b[i][j]$
+				}
+			}
+		%\Return{$max$}\;
+		\caption{\textbf{rank2TensorAdd} finds the addition of two $N\times N$ matrices}
+		\label{rank2TensorAdd}
+	\end{algorithm}
+
+%%%%%
+\subsection{2-Dimensional matrix multiplication}
+The multiplication of two 2-dimensional matrices is achieved by performing the dot product on the respective rows and columns, as illustrated in Equation~\ref{2D_multi}~\cite{matrix_Multi}.
+Algorithm~\ref{rank2TensorMulti} shows the pseudo-code used to multiply two $N\times N$ matrices. 
+	\begin{equation}
+		c_{ij} =\sum_{k}^{ } a_{ij}\times b_{ij} 
+		\label{2D_multi}
+	\end{equation}
+\vspace*{-5mm}
+	\begin{algorithm}
+		\DontPrintSemicolon
+		\KwIn{Three $N\times N$ constant integer arrays: $a[N][N], b[N][N]$ and $c[N][N]$}
+		\KwOut{void}
+			$N \gets $ size$(a)$\;
+			\For{$k \gets 0$ \textbf{to} $N-1$} {
+				\For{$i \gets 0$ \textbf{to} $N-1$} {
+					\For{$j \gets 0$ \textbf{to} $N-1$} {
+						$c[i][j]=c[i][j]+a[i][j]\times b[i][j]$
+					}
+				}
+			}
+		\caption{\textbf{rank2TensorMulti} finds the multiplication  of two $N\times N$ matrices}
+		\label{rank2TensorMulti}
+	\end{algorithm}
+
+%%%%%
+\subsection{3-Dimensional array addition}
+The addition of two 3-dimensional arrays is achieved using element-by-element addition. Algorithm~\ref{rank3TensorAdd} shows the pseudo-code used to sum two $N\times N\times N$ matrices.
+	\begin{algorithm}
+		\DontPrintSemicolon
+		\KwIn{Three $N\times N\times N$ constant integer arrays: $a[N][N][N], b[N][N][N]$ and $c[N][N][N]$}
+		\KwOut{void}
+			$N \gets $ size$(a)$\;
+			\For{$k \gets 0$ \textbf{to} $N-1$} {
+				\For{$i \gets 0$ \textbf{to} $N-1$} {
+					\For{$j \gets 0$ \textbf{to} $N-1$} {
+						$c[i][j][k]=a[i][j][k]+ b[i][j][k]$
+					}
+				}
+			}
+		\caption{\textbf{rank3TensorAdd} finds the addition of two $N\times N\times N$ matrices}
+		\label{rank3TensorAdd}
+	\end{algorithm}
+
+%%%%%
+\subsection{3-Dimensional array multiplication}
+The multiplication of two 3-dimensional arrays makes use of 2-dimensional matrix multiplication. The $i^{th}$ row-plane of array A and the $j^{th}$ column-plane of array B are multiplied using traditional 2-dimensional matrix  multiplication shown in Algorithm~\ref{rank2TensorMulti}. The result is the $k^{th}$ layer-plane of array C.
+Algorithm~\ref{rank3TensorMulti} shows the pseudo-code used to multiply two $N\times N\times N$ matrices. 
+	\begin{algorithm}
+		\DontPrintSemicolon
+		\KwIn{Three $N\times N\times N$ constant integer arrays: $a[N][N][N], b[N][N][N]$ and $c[N][N][N]$}
+		\KwOut{void}
+			$N \gets $ size$(a)$\;
+			$temp_-c = zeros(N,N)$\\
+			\For{$k \gets 0$ \textbf{to} $N-1$} {
+				$temp_-a = a[k][:][:]$ \\
+				$temp_-b = b[:][k][:]$ \\
+				$rank2TensorMulti(temp_-a[N][N], temp_-b[N][N], temp_-c[N][N])$ \\
+				$c[:][:][k] = temp_-c$
+			}
+		\caption{\textbf{rank3TensorMulti} finds the multiplication of two $N\times N\times N$ matrices}
+		\label{rank3TensorMulti}
+	\end{algorithm}
+
+
+%%%%%
+\bibliographystyle{witseie}
+\bibliography{bibliography_lab1_app}
+
+
+\end{document}
