@@ -1,9 +1,12 @@
 # ELEN4020A_Group7 Lab 1: Multidimensional array addition and multiplication
 Jason Smit (709363); Emma Clark (1088496); Isabel Tollman (728359)
 
+NOTE: the GNU C++ compiler used is
+	* g++-7 7.3.0-27ubuntu1~18.04 amd64 
+
 ## GitHub repository: a guide
 
-There are three branches in the repository, one for C++ code, one for documentation, and the master branch.
+There are three branches in the repository: one for C++ code, one for documentation, and the master branch.
 
 ### Branch: Code
 
@@ -15,6 +18,8 @@ Includes pseudo-code .txt files, the .tex file for the report, and a folder call
 
 ### Branch: master
 
-This branch has been merged with the *'Code'* branch.
+This branch has been merged with both the *'Code'* and *'Documentation'* branches. Two folders:
+	* Code: contains contents of *'Code'* branch
+	* Documentation: contains contents of *'Documentation'* branch
 
 
